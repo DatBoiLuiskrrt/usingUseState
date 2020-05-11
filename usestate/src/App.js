@@ -6,13 +6,18 @@ const api = {
 
 function App() {
   const dateBuilder = (d) => {
+    // d = new Date() which enable us to use todays date
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
-    let day = days.[d.getDay()];
+    let day = days[d.getDay()];
+    // days[Sun-Sat] depending on the day
     let date = d.getDate();
-    let month = months[d.getMoth()];
+    // this gets the day that we are in
+    let month = months[d.getMonth()];
+    // fetched the month 
     let year = d.getFullYear();
+    // fetched the year
     
     return `${day} ${date} ${month} ${year}`
   }
